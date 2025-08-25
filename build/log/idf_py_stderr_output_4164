@@ -1,0 +1,51 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\koral\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=1 C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF
+info: INFO: Symbol LV_I2C defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:485
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_tft\Kconfig:1001
+info: INFO: Symbol LV_TOUCH_SPI_MISO defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:213
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:83
+info: INFO: Symbol LV_TOUCH_SPI_MOSI defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:224
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:92
+info: INFO: Symbol LV_TOUCH_SPI_CLK defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:101
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:236
+info: INFO: Symbol LV_TOUCH_SPI_CS defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:245
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:109
+info: INFO: Symbol LV_TOUCH_X_MIN defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:257
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:376
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:129
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:336
+info: INFO: Symbol LV_TOUCH_Y_MIN defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:341
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:382
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:262
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:135
+info: INFO: Symbol LV_TOUCH_X_MAX defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:267
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:388
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:141
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:346
+info: INFO: Symbol LV_TOUCH_Y_MAX defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:147
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:394
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:272
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:351
+info: INFO: Symbol LV_TOUCH_XY_SWAP defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:356
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:400
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:153
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:277
+info: INFO: Symbol LV_TOUCH_INVERT_X defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:361
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:282
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:158
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:405
+info: INFO: Symbol LV_TOUCH_INVERT_Y defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:163
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:410
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:366
+    C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\components\lvgl_esp32_drivers\lvgl_touch\Kconfig:287

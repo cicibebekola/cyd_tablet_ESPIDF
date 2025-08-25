@@ -1,0 +1,11 @@
+# Kconfig.projbuild - Project build configuration
+# This file can be empty or contain project-specific configuration options
+
+# Example: If you want to add SD card configuration options later
+# menu "SD Card Configuration"
+#     config SD_CARD_ENABLED
+#         bool "Enable SD Card Support"
+#         default y
+#         help
+#             Enable SD card functionality
+# endmenu
