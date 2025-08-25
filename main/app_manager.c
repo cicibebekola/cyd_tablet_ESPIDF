@@ -10,6 +10,8 @@
 #include "./apps/wifi/wifi_app.h"
 #include "./apps/bt/bt_app.h"
 #include "./apps/folder/folder_app.h"
+#include "./apps/text_view/text_viewer_app.h"
+#include "./apps/video_player/video_player_app.h"
 
 // App registry with memory management
 static app_info_t apps[APP_MAX_COUNT] = {
@@ -44,7 +46,24 @@ static app_info_t apps[APP_MAX_COUNT] = {
         .create = create_folder_app,
         .destroy = destroy_folder_app,
         .screen = NULL
+    },
+    {
+        .id = APP_TEXT_VIEWER,
+        .name = "Text_viewer",
+        .color = UI_COLOR_SECONDARY,
+        .create = create_text_viewer_app,
+        .destroy = destroy_text_viewer_app,
+        .screen = NULL
+    },
+    {
+        .id = APP_VIDEO_PLAYER,
+        .name = "Video_Player",
+        .color = UI_COLOR_SECONDARY,
+        .create = create_video_player_app,
+        .destroy = destroy_video_player_app,
+        .screen = NULL
     }
+
 
 };
 

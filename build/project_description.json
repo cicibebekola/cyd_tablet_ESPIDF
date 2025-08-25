@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "CYD_TABLET_ESPIDF",
-    "project_version":    "f28c2dd",
+    "project_version":    "8debc19-dirty",
     "project_path":       "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF",
     "idf_path":           "C:/Users/koral/esp/v5.5/esp-idf",
     "build_dir":          "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build",
@@ -1270,7 +1270,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/main.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/app_manager.h", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/app_manager.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/ui_styles.h", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/ui_styles.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/sd_card_manager.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/home/home_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/wifi/wifi_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/bt/bt_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/folder/folder_app.c" ],
+            "sources": [ "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/app_manager.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/bt/bt_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/folder/folder_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/home/home_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/text_view/text_viewer_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/video_player/video_player_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/apps/wifi/wifi_app.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/main.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/sd_card_manager.c", "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main/ui_styles.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

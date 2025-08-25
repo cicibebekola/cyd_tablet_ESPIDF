@@ -1,18 +1,10 @@
-/*
- * LVGL Symbols Reference (all render fast and reliably):
- * LV_SYMBOL_DIRECTORY, LV_SYMBOL_FILE, LV_SYMBOL_IMAGE, LV_SYMBOL_AUDIO
- * LV_SYMBOL_VIDEO, LV_SYMBOL_ARCHIVE, LV_SYMBOL_SETTINGS, LV_SYMBOL_HOME
- * LV_SYMBOL_REFRESH, LV_SYMBOL_PLUS, LV_SYMBOL_MINUS, LV_SYMBOL_EDIT
- * LV_SYMBOL_OK, LV_SYMBOL_CLOSE, LV_SYMBOL_WARNING, LV_SYMBOL_TRASH
- * LV_SYMBOL_SAVE, LV_SYMBOL_BELL, LV_SYMBOL_KEYBOARD, LV_SYMBOL_GPS
- * LV_SYMBOL_WIFI, LV_SYMBOL_BLUETOOTH, LV_SYMBOL_USB, LV_SYMBOL_SD_CARD
- */
-
 #include "lvgl.h"
 #include "folder_app.h"
 #include "../../app_manager.h"
 #include "../../ui_styles.h"
-#include "../../sd_card_manager.h"  // Add this include
+#include "../../sd_card_manager.h"
+#include "./apps/text_view/text_viewer_app.h"  // Include the separate text viewer
+#include "./apps/video_player/video_player_app.h"  // Include the video player
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -27,7 +19,7 @@
 static lv_obj_t *folder_screen = NULL;
 static lv_obj_t *file_list = NULL;
 static lv_obj_t *status_label = NULL;
-static lv_obj_t *sd_status_label = NULL;  // New: SD card status display
+static lv_obj_t *sd_status_label = NULL;
 
 // Dynamic file structure
 typedef struct {
@@ -47,10 +39,11 @@ static int file_count = 0;
 static void create_file_list(void);
 static void file_item_event_cb(lv_event_t *e);
 static void back_button_event_cb(lv_event_t *e);
-static void refresh_button_event_cb(lv_event_t *e);  // New: refresh button
+static void refresh_button_event_cb(lv_event_t *e);
 static int load_directory_contents(const char *path);
-static void update_sd_status(void);  // New: update SD card status
-static const char* format_file_size(size_t bytes);  // New: format file size
+static void update_sd_status(void);
+static const char* format_file_size(size_t bytes);
+static bool is_text_file(const char* filename);
 
 // New: Get appropriate LVGL symbol based on file type
 static const char* get_file_symbol(const char* filename, bool is_folder) {
@@ -78,6 +71,7 @@ static const char* get_file_symbol(const char* filename, bool is_folder) {
     
     return LV_SYMBOL_FILE; // Default file symbol
 }
+
 static const char* format_file_size(size_t bytes) {
     static char size_str[32];
     
@@ -92,6 +86,22 @@ static const char* format_file_size(size_t bytes) {
     }
     
     return size_str;
+}
+
+// Check if file is a text file based on extension
+static bool is_text_file(const char* filename) {
+    const char* ext = strrchr(filename, '.');
+    if (!ext) return false;
+    
+    ext++; // Skip the dot
+    return (strcasecmp(ext, "txt") == 0 || 
+            strcasecmp(ext, "log") == 0 ||
+            strcasecmp(ext, "cfg") == 0 ||
+            strcasecmp(ext, "conf") == 0 ||
+            strcasecmp(ext, "ini") == 0 ||
+            strcasecmp(ext, "json") == 0 ||
+            strcasecmp(ext, "xml") == 0 ||
+            strcasecmp(ext, "csv") == 0);
 }
 
 // New: Update SD card status display
@@ -293,12 +303,27 @@ static void file_item_event_cb(lv_event_t *e) {
             lv_label_set_text(status_label, status_text);
         }
     } else {
-        // Handle file opening - show file info for now
-        ESP_LOGI("FOLDER_APP", "Opening file: %s (%s)", 
-                 files[file_index].name, format_file_size(files[file_index].size));
+        // Handle file opening
+        char full_file_path[512];
+        snprintf(full_file_path, sizeof(full_file_path), "%s/%s", current_path, files[file_index].name);
         
-        // TODO: Add file viewer based on file extension
-        // For now, just log the file information
+        if (is_text_file(files[file_index].name)) {
+            // Open text file in separate text viewer app
+            ESP_LOGI("FOLDER_APP", "Opening text file: %s", files[file_index].name);
+            text_viewer_set_file_path(full_file_path);  // Set the file path first
+            app_manager_switch_to(APP_TEXT_VIEWER);     // Switch to text viewer app
+        } else if (video_player_is_supported_file(files[file_index].name)) {
+            // Open video file in video player app
+            ESP_LOGI("FOLDER_APP", "Opening video file: %s", files[file_index].name);
+            video_player_set_file_path(full_file_path); // Set the file path first
+            app_manager_switch_to(APP_VIDEO_PLAYER);    // Switch to video player app
+        } else {
+            // Show file info for non-text files
+            ESP_LOGI("FOLDER_APP", "File info: %s (%s)", 
+                     files[file_index].name, format_file_size(files[file_index].size));
+            
+            // TODO: Add viewers for other file types (images, etc.)
+        }
     }
 }
 
@@ -346,9 +371,13 @@ static void create_file_list(void) {
         lv_obj_set_size(item_btn, lv_pct(95), 50);  // Slightly taller for file size
         lv_obj_set_pos(item_btn, 0, y_pos);
         
-        // Different colors for folders vs files
+        // Different colors for folders vs files vs text files vs video files
         if (files[i].is_folder) {
             lv_obj_set_style_bg_color(item_btn, lv_color_hex(UI_COLOR_SECONDARY), 0);
+        } else if (is_text_file(files[i].name)) {
+            lv_obj_set_style_bg_color(item_btn, lv_color_hex(0x4CAF50), 0); // Green for text files
+        } else if (video_player_is_supported_file(files[i].name)) {
+            lv_obj_set_style_bg_color(item_btn, lv_color_hex(0xFF5722), 0); // Orange for video files
         } else {
             lv_obj_set_style_bg_color(item_btn, lv_color_hex(UI_COLOR_ACCENT), 0);
         }
@@ -373,6 +402,21 @@ static void create_file_list(void) {
             lv_obj_set_style_text_color(size_label, lv_color_hex(UI_COLOR_TEXT_SECONDARY), 0);
             lv_obj_set_style_text_font(size_label, &lv_font_montserrat_10, 0);
             lv_obj_align(size_label, LV_ALIGN_BOTTOM_LEFT, 10, -5);
+        }
+        
+        // Add type indicators for special files
+        if (!files[i].is_folder && is_text_file(files[i].name)) {
+            lv_obj_t *type_label = lv_label_create(item_btn);
+            lv_label_set_text(type_label, "TEXT");
+            lv_obj_set_style_text_color(type_label, lv_color_hex(0xFFFFFF), 0);
+            lv_obj_set_style_text_font(type_label, &lv_font_montserrat_8, 0);
+            lv_obj_align(type_label, LV_ALIGN_TOP_RIGHT, -5, 5);
+        } else if (!files[i].is_folder && video_player_is_supported_file(files[i].name)) {
+            lv_obj_t *type_label = lv_label_create(item_btn);
+            lv_label_set_text(type_label, "VIDEO");
+            lv_obj_set_style_text_color(type_label, lv_color_hex(0xFFFFFF), 0);
+            lv_obj_set_style_text_font(type_label, &lv_font_montserrat_8, 0);
+            lv_obj_align(type_label, LV_ALIGN_TOP_RIGHT, -5, 5);
         }
         
         y_pos += 55; // Move to next position (increased spacing)

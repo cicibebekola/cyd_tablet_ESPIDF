@@ -9,6 +9,8 @@ typedef enum {
     APP_WIFI,
     APP_BLUETOOTH,
     APP_FOLDER,
+    APP_TEXT_VIEWER,
+    APP_VIDEO_PLAYER,
     APP_MAX_COUNT
 } app_id_t;
 

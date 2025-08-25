@@ -27,7 +27,15 @@
         "folder_app.h": "c",
         "esp_log.h": "c",
         "ui_styles.h": "c",
-        "spi_master.h": "c"
+        "spi_master.h": "c",
+        "stddef.h": "c",
+        "cmath": "c",
+        "complex": "c",
+        "random": "c",
+        "video_player_app.h": "c",
+        "text_viewer_app.h": "c",
+        "format": "c",
+        "thread": "c"
     },
     "idf.pythonInstallPath": "C:\\Users\\koral\\.espressif\\tools\\idf-python\\3.11.2\\python.exe"
 }
