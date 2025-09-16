@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/CMakeFiles/bootloader
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/CMakeFiles/bootloader.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/CMakeFiles/bootloader-complete.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/CMakeFiles/bootloader
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/CMakeFiles/bootloader.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/CMakeFiles/bootloader-complete.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

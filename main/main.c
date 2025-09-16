@@ -6,6 +6,7 @@
 #include "esp_spi_flash.h"
 #include "esp_timer.h"
 #include "esp_log.h"
+#include "nvs_flash.h"
 
 #include "lvgl.h"
 #include "lv_port_disp.h"
@@ -28,6 +29,16 @@ void app_main(void)
     // Add stabilization delay for cold boot
     ESP_LOGI(TAG, "System stabilization delay...");
     vTaskDelay(pdMS_TO_TICKS(200));
+
+    // Initialize NVS (required for Wi-Fi)
+    ESP_LOGI(TAG, "Initializing NVS...");
+    esp_err_t reh = nvs_flash_init();
+    if (reh == ESP_ERR_NVS_NO_FREE_PAGES || reh == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+    ESP_ERROR_CHECK(nvs_flash_erase());
+    reh = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(reh);
+    ESP_LOGI(TAG, "NVS initialized successfully");
     
     // Initialize LVGL first
     ESP_LOGI(TAG, "Initializing LVGL...");

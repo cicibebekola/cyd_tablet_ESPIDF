@@ -1,2 +1,2 @@
-source C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/gdbinit/symbols
-source C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/gdbinit/connect
+source C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/gdbinit/symbols
+source C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/gdbinit/connect

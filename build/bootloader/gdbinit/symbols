@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader/bootloader.elf
+file C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader/bootloader.elf

@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: C:\Users\koral\Documents\cyd_tablet_ESPIDF\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 

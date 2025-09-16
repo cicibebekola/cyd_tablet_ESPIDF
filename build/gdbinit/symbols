@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader/bootloader.elf
+    add-symbol-file C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/CYD_TABLET_ESPIDF.elf
+file C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/CYD_TABLET_ESPIDF.elf

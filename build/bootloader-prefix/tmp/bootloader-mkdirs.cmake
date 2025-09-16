@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Users/koral/esp/v5.5/esp-idf/components/bootloader/subproject"
   file(MAKE_DIRECTORY "C:/Users/koral/esp/v5.5/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader"
-  "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix"
-  "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/tmp"
-  "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src"
-  "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader"
+  "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix"
+  "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/tmp"
+  "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src"
+  "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

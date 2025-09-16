@@ -1906,7 +1906,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_lv_porting_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\koral\.espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -SC:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF -BC:\Users\koral\Desktop\3.2inch_ESP32_LVGL\cyd_tablet_ESPIDF\build
+  command = C:\Users\koral\.espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -SC:\Users\koral\Documents\cyd_tablet_ESPIDF -BC:\Users\koral\Documents\cyd_tablet_ESPIDF\build
   description = Re-running CMake...
   generator = 1
 

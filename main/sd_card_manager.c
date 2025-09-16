@@ -1,7 +1,7 @@
 /**
  * @file sd_card_manager.c
  * @brief SD Card implementation using VSPI (SPI3_HOST) without DMA
- * Fixed for ESP32/ESP-IDF compatibility
+ * Fixed for ESP32/ESP-IDF compatibility with enhanced free space calculation
  */
 
 #include "sd_card_manager.h"
@@ -15,6 +15,7 @@
 #include "esp_check.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "ff.h"
 
 /* ==========================================================================
  * PRIVATE VARIABLES
@@ -291,24 +292,47 @@ esp_err_t sd_get_space_info(uint64_t *total_bytes, uint64_t *free_bytes)
         return ESP_ERR_SD_NOT_MOUNTED;
     }
     
-    // Get card capacity directly from card info
+    // Method 1: Try FATFS direct API first
+    FATFS *fs;
+    DWORD free_clusters;
+    
+    FRESULT res = f_getfree("0:", &free_clusters, &fs);
+    if (res == FR_OK) {
+        uint32_t sector_size = 512; // Standard sector size
+        uint32_t cluster_size = fs->csize * sector_size;
+        
+        if (total_bytes != NULL) {
+            *total_bytes = (uint64_t)(fs->n_fatent - 2) * cluster_size;
+        }
+        if (free_bytes != NULL) {
+            *free_bytes = (uint64_t)free_clusters * cluster_size;
+        }
+        
+        ESP_LOGI(TAG, "Total capacity: %llu bytes (%.2f MB)", 
+                 total_bytes ? *total_bytes : 0,
+                 total_bytes ? (double)*total_bytes / (1024.0 * 1024.0) : 0.0);
+        ESP_LOGI(TAG, "Free space: %llu bytes (%.2f MB)", 
+                 free_bytes ? *free_bytes : 0,
+                 free_bytes ? (double)*free_bytes / (1024.0 * 1024.0) : 0.0);
+        
+        return ESP_OK;
+    }
+    
+    // Method 2: Fallback - get total capacity from card info only
+    ESP_LOGW(TAG, "FATFS f_getfree failed (error: %d), using card info only", res);
+    
     if (total_bytes != NULL && s_card != NULL) {
         *total_bytes = ((uint64_t)s_card->csd.capacity) * s_card->csd.sector_size;
-    }
-    
-    // For free space, we can't easily get it without statvfs
-    // Set to a reasonable estimate or leave as unknown
-    if (free_bytes != NULL) {
-        *free_bytes = 0;  // Unknown - would need filesystem scanning
-        ESP_LOGW(TAG, "Free space calculation not available on ESP32");
-    }
-    
-    if (total_bytes != NULL) {
         ESP_LOGI(TAG, "Total capacity: %llu bytes (%.2f MB)", 
-                 *total_bytes, (float)*total_bytes / (1024.0 * 1024.0));
+                 *total_bytes, (double)*total_bytes / (1024.0 * 1024.0));
     }
     
-    return ESP_OK;
+    if (free_bytes != NULL) {
+        *free_bytes = 0;  // Unknown
+        ESP_LOGW(TAG, "Free space calculation not available");
+    }
+    
+    return ESP_ERR_NOT_SUPPORTED;
 }
 
 /* ==========================================================================

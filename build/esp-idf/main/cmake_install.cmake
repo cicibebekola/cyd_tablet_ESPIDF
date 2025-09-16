@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/koral/Desktop/3.2inch_ESP32_LVGL/cyd_tablet_ESPIDF/main
+# Install script for directory: C:/Users/koral/Documents/cyd_tablet_ESPIDF/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
