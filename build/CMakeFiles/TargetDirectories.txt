@@ -453,6 +453,7 @@ C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/esp_gdbstub/CMakeFiles/
 C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/esp_gdbstub/CMakeFiles/install.dir
 C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/esp_gdbstub/CMakeFiles/install/local.dir
 C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/esp_gdbstub/CMakeFiles/install/strip.dir
+C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 C:/Users/koral/Documents/cyd_tablet_ESPIDF/build/esp-idf/bt/CMakeFiles/list_install_components.dir

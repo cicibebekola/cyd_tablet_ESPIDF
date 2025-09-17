@@ -6,3 +6,10 @@ cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(CYD_TABLET_ESPIDF)
+
+add_compile_options(
+    -ffunction-sections
+    -fdata-sections
+    -Wl,--gc-sections
+    -Os  # Optimize for size
+)

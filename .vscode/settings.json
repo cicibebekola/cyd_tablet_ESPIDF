@@ -35,7 +35,8 @@
         "video_player_app.h": "c",
         "text_viewer_app.h": "c",
         "format": "c",
-        "thread": "c"
+        "thread": "c",
+        "lv_port_disp.h": "c"
     },
     "idf.pythonInstallPath": "C:\\Users\\koral\\.espressif\\tools\\idf-python\\3.11.2\\python.exe"
 }
